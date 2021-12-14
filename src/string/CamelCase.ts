@@ -2,7 +2,7 @@ export {};
 
 import type { CapitalizeString } from "./CapitalizeString";
 // 横杠命名转化为驼峰命名
-type CamelCase<
+export type CamelCase<
   T extends string,
   U extends string = ""
 > = T extends `${infer L}-${infer R1}${infer R2}`

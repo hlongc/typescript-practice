@@ -19,3 +19,6 @@ type A4 = Equal<"BFE", "BFE">; // true
 type A5 = Equal<"BFE", string>; // false
 type A6 = Equal<1 | 2, 2 | 1>; // true
 type A7 = Equal<{ a: number }, { a: number }>; // true
+
+type A = keyof 1;
+type B = keyof any;

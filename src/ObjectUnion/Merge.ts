@@ -1,12 +1,14 @@
 export {};
 
-type Merge<T extends Record<string, any>, K extends Record<string, any>> = {
-  [M in keyof T | keyof K]: M extends keyof K
-    ? K[M]
-    : M extends keyof T
-    ? T[M]
-    : never;
-};
+// type Merge<T extends Record<string, any>, K extends Record<string, any>> = {
+//   [M in keyof T | keyof K]: M extends keyof K
+//     ? K[M]
+//     : M extends keyof T
+//     ? T[M]
+//     : never;
+// };
+
+type Merge<T, K> = Pick<T, Exclude<keyof T, keyof K>> & K;
 
 // 合并两个对象类型T以及K，如果属性重复，则以K中属性类型为准；
 
